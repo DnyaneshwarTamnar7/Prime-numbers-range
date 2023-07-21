@@ -1,0 +1,22 @@
+1) Write query to return top 4 team from 10 teams
+
+In Scoreboard table there is 2(two) columns for total run by each team and teamName
+--------------------------------------------------------------------------------------------------------
+SELECT teamName, SUM(run) AS TotalRun FROM SCOREBOARD GROUP BY teamName ORDER BY TotalRun  DESC LIMIT 4;
+--------------------------------------------------------------------------------------------------------
+
+========================================================================================================
+2) Highest run scored by each batsman
+
+In scoreboard table there is 22 columns for players which contain player name, playerId-runScored and many more. From that above column name we can select name playerid and runscore by batsman. We can separate the “playerId-runScored” the column name using SUBSTRING_INDEX  function for query.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT name, SUBSTRING_INDEX(playerId-runScored,”-“,1) AS playerId, MAX(SUBSTRING_INDEX(playerId-runScored,”-“,-1)  FROM SCOREBOARD GROUP BY SUBSTRING_INDEX(playerId-runScored,”-“,1);
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+=================================================================================================================================================
+3) Which team has hit maximum sixes
+
+In Summary table it contains columns like teamName,  sixes of each team.
+----------------------------------------------------------------------------------------------------------
+SELECT teamName, SUM(sixes) as totalSixes FROM SUMMARY GROUP BY teamName ORDER BY totalSixes DESC LIMIT 1;
+----------------------------------------------------------------------------------------------------------
