@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Get Prime Numbers</title>
+</head>
+<body>
+    <section id="input">
+        <div id="one">
+            <div>
+                <label for="first">First Number</label><br>
+                <input id="first" type="text" name="first">
+            </div>
+            <div>
+                <label for="second">Second Number</label><br>
+                <input id="second" type="text" name="second">
+            </div>
+        </div>
+        <div id="two">
+            <div>
+                <button onclick="getPrimesInRange()">Calculate</button>
+            </div>
+        </div>
+        <button><a href="#result">Details</a></button>
+    </section>
+    <section id="time-result">
+        <div id="all-time"></div>
+        <div id="avg-time"></div>
+    </section>
+    
+    <section id="result" class="overlayout">
+        <div class="popup">
+            <h2>All time</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+            <table id="result-tab-one">
+                <tr>
+                    <th>Number</th>
+                    <th>Result</th>
+                    <th>Time In ms</th>
+                </tr>
+
+            </table>
+            </div>
+        </div>
+        
+        <div class="popup">
+            <h2>All time</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+            <table id="result-tab-two">
+                <tr>
+                    <th>Number</th>
+                    <th>Time in ms</th>
+                </tr>
+            </table>
+            </div>
+        </div>
+
+    </section>
+    
+    <script src="app.js"></script>
+</body>
+</html>
